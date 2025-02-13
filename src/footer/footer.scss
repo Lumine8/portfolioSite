@@ -1,0 +1,48 @@
+.footer {
+  color: #fff;
+  padding: 2rem 1rem;
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+  position: relative; /* Prevent overlap issues */
+  bottom: 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 0;
+      color: #bbb;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      text-align: center;
+
+      li {
+        display: inline-block;
+        margin: 0 0.5rem;
+
+        a {
+          color: #00aaff;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #007acc;
+          }
+        }
+      }
+    }
+  }
+}

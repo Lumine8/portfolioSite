@@ -1,42 +1,108 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* 🎨 Dynamic Background */
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #1b1b1b, #242424, #323232, #1a1a2e);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite; /* Keeps initial animation */
+  color: white;
+  font-family: 'Sora', sans-serif;
+  position: relative;
 }
 
+/* 🔄 Animated Gradient */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Randomized floating animation */
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-100px) translateX(20px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-200px) translateX(-20px);
+    opacity: 0;
+  }
+}
+
+/* 🔄 Rotating Logo */
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  height: 10rem;
+  will-change: filter, transform;
+  transition: filter 300ms, transform 300ms;
+  animation: rotateLogo 10s linear infinite;
 }
+
+/* Hover Effects */
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 3em #646cffaa);
 }
+
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 3rem rgb(10, 173, 213));
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 🔄 Logo Rotation */
+@keyframes rotateLogo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 🌟 Mild Heading Glow Effect */
+h1 {
+  font-size: 3.2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+/* ✨ Subtle Glow on Hover */
+h1:hover {
+  /* text-shadow: 0 0 2px drop-shadow(0 0 3rem rgb(10, 173, 213)), 0 0 3px #dd42f9; */
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .logo {
+    height: 7rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 2.5em;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* 🎨 Dynamic Background */
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #1b1b1b, #242424, #323232, #1a1a2e);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: white;
+  font-family: 'Sora', sans-serif;
+  position: relative;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* 🔄 Animated Gradient */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

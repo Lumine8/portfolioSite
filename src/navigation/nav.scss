@@ -1,0 +1,144 @@
+/* 🌟 Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(52, 58, 64, 0.8); /* Semi-transparent */
+  backdrop-filter: blur(10px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures space between logo & menu */
+  padding: 0 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* 🌐 Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  animation: rotate 10s linear infinite;
+}
+
+.nav-logo img:hover {
+  filter: drop-shadow(0 0 1rem #0aadD5);
+}
+
+/* 🔄 Rotation Animation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 🌟 Centered Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-grow: 1; /* Makes sure it takes up space */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🎨 Link Styling */
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  position: relative;
+  transition: color 0.3s, transform 0.2s, box-shadow 0.3s ease-in-out;
+}
+
+/* ✨ Glowing Hover Effect */
+.nav-links a:hover {
+  color: #50e0f3;
+  transform: translateY(-3px);
+  text-shadow: 0 0 10px rgba(80, 224, 243, 0.7);
+}
+
+/* 🌈 Active Link Gradient Border */
+.nav-links a.active {
+  background: linear-gradient(90deg, #50e0f3, #88a9e6);
+  color: white;
+  box-shadow: 0 0 12px rgba(80, 224, 243, 0.6);
+}
+
+/* 📱 Hamburger Menu */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon:hover {
+  transform: scale(1.1);
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  /* 📂 Hidden Menu by Default */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    flex-direction: column;
+    background: rgba(52, 58, 64, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 1rem 0;
+    display: none;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  /* 📂 Expand Menu on Click */
+  .nav-links.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .nav-links a {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* 🌟 Smooth Fade-In */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
